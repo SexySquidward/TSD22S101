@@ -85,7 +85,7 @@
 
         <controls:PageHeader x:Name="pageHeader" RelativePanel.AlignLeftWithPanel="True"
                              RelativePanel.AlignRightWithPanel="True"
-                             RelativePanel.AlignTopWithPanel="True" Text="Wish List">
+                             RelativePanel.AlignTopWithPanel="True" Text="Contact Details">
 
             <!--  secondary commands  -->
             <controls:PageHeader.SecondaryCommands>
@@ -101,16 +101,27 @@
                              RelativePanel.AlignBottomWithPanel="True">
             <!--primary commands-->
             <controls:PageHeader.PrimaryCommands>
-                <AppBarButton Icon="Add" Label="Add Contact Details" Click="AddContactDetails_Click"/>
-                <AppBarButton Icon="Delete" Label="Delete Contact Details" Click="DeleteContactDetails_Click"/>
+                <AppBarButton Icon="Add" Label="Add Contact" Click="AddContactDetails_Click"/>
+                <AppBarButton Icon="Delete" Label="Delete Contact" Click="DeleteContactDetails_Click"/>
+            </controls:PageHeader.PrimaryCommands>
+        </controls:PageHeader>
+
+        <controls:PageHeader x:Name="pageFooterUpdate" RelativePanel.AlignLeftWithPanel="True"
+                             RelativePanel.AlignRightWithPanel="True"
+                             RelativePanel.AlignBottomWithPanel="True">
+            <!--primary commands-->
+            <controls:PageHeader.PrimaryCommands>
+                <AppBarButton Icon="Edit" Label="Eidt Contact" Click="EditContact_Click" />
+                <AppBarButton x:Name="SaveChangeBarBtn" Icon="Save" Label="Save Change" Click="SaveContactDetails_Click"/>
+                <AppBarButton Icon="Cancel" Label="Cancel" Click="CancelContactUpdate_Click"/>
             </controls:PageHeader.PrimaryCommands>
         </controls:PageHeader>
 
         <!--Page Conetents start here-->
-        <Pivot>
+        <Pivot x:Name="ContactDetailsPivot" SelectionChanged="contactDetailsPivot_SelectionChanged" >
             <RelativePanel.Below>pageHeader</RelativePanel.Below>
+            <PivotItem Header="Add Contact">
             <RelativePanel.Above>pageFooter</RelativePanel.Above>
-            <PivotItem Header="Add Contact Details">
                 <Grid>
                     <Grid.RowDefinitions>
                         <RowDefinition Height="250"/>
@@ -125,6 +136,30 @@
                         <TextBox x:Name="_MobilePhone" PlaceholderText="0449000111" Header="Mobile Phone"/>
                     </StackPanel>
                     <ListView x:Name="ContactDetailsView" Grid.Row="1"
+                              HorizontalAlignment="Stretch"
+                              VerticalAlignment="Stretch"
+                              ItemTemplate="{StaticResource ContactDetailsDataViews}">
+                        <RelativePanel.Below>pageStart</RelativePanel.Below>
+                    </ListView>
+                </Grid>
+            </PivotItem>
+            <!--Eddit Contace Detials page-->
+            <PivotItem Header="Update Contact" >
+            <RelativePanel.Above>pageFooterUpdate</RelativePanel.Above>
+                <Grid>
+                    <Grid.RowDefinitions>
+                        <RowDefinition Height="250"/>
+                        <RowDefinition Height="*"/>
+                    </Grid.RowDefinitions>
+                    <StackPanel x:Name="EditContactStackPanel" Grid.Row="0"
+                            Orientation="Vertical" VerticalAlignment="Stretch"
+                            HorizontalAlignment="Stretch">
+                        <TextBox x:Name="_FirstNameUpdate" PlaceholderText="Shurui" Header="First Name"/>
+                        <TextBox x:Name="_LastNameUpdate" PlaceholderText="Zhang" Header="Last Name"/>
+                        <TextBox x:Name="_CompanyNameUpdate" PlaceholderText="IT Works" Header="Company Name"/>
+                        <TextBox x:Name="_MobilePhoneUpdate" PlaceholderText="0449000111" Header="Mobile Phone"/>
+                    </StackPanel>
+                    <ListView x:Name="UpdateDetailsView" Grid.Row="1"
                               HorizontalAlignment="Stretch"
                               VerticalAlignment="Stretch"
                               ItemTemplate="{StaticResource ContactDetailsDataViews}">
