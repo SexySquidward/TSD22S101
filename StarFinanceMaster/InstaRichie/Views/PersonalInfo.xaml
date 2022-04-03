@@ -130,7 +130,7 @@
                     <StackPanel Grid.Row="1"
                             Orientation="Vertical" VerticalAlignment="Top" Margin="10,5,10,0">
                         <TextBox x:Name="FirstNameTxtBx" Header="First Name" PlaceholderText="Gerelttur" TextWrapping="Wrap"/>
-                        <TextBox x:Name="LastNameTxtBx" Header="First Name" PlaceholderText="Turbat" TextWrapping="Wrap"/>
+                        <TextBox x:Name="LastNameTxtBx" Header="Last Name" PlaceholderText="Turbat" TextWrapping="Wrap"/>
                         <TextBox x:Name="DOBTxtBx" Header="Date of Birth" PlaceholderText="30/03/2022" TextWrapping="Wrap"/>
                         <TextBox x:Name="GenderTxtBx" Header="Gender" PlaceholderText="M/F" TextWrapping="Wrap"/>
                         <TextBox x:Name="EmailTxtBx" Header="EmailAddress" PlaceholderText="example@gmail.com" TextWrapping="Wrap"/>
@@ -151,7 +151,7 @@
                     <StackPanel Grid.Row="1"
                             Orientation="Vertical" VerticalAlignment="Top" Margin="10,5,10,0">
                         <TextBox x:Name="FirstNameTxtBxUpdate" Header="First Name" PlaceholderText="Gerelttur" TextWrapping="Wrap"/>
-                        <TextBox x:Name="LastNameTxtBxUpdate" Header="First Name" PlaceholderText="Turbat" TextWrapping="Wrap"/>
+                        <TextBox x:Name="LastNameTxtBxUpdate" Header="Last Name" PlaceholderText="Turbat" TextWrapping="Wrap"/>
                         <TextBox x:Name="DOBTxtBxUpdate" Header="Date of Birth" PlaceholderText="30/03/2022" TextWrapping="Wrap"/>
                         <TextBox x:Name="GenderTxtBxUpdate" Header="Gender" PlaceholderText="M/F" TextWrapping="Wrap"/>
                         <TextBox x:Name="EmailTxtBxUpdate" Header="EmailAddress" PlaceholderText="example@gmail.com" TextWrapping="Wrap"/>
