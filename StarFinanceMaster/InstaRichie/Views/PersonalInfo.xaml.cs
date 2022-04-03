@@ -39,6 +39,7 @@ namespace StartFinance.Views
 
         public void Results()
         {
+            //conn.DropTable<PersonalInfoDB>();
             conn.CreateTable<PersonalInfoDB>();
             var query1 = conn.Table<PersonalInfoDB>();
             PersonalInfoView.ItemsSource = query1.ToList();
